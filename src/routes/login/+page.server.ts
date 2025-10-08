@@ -46,7 +46,8 @@ export const actions: Actions = {
 
 
     if (!existingUser) {
-      return;
+      form.errors.username = ["User does not exist"];
+      return fail(400, { form });
     }
 
     const validPassword = await new Argon2id().verify(
