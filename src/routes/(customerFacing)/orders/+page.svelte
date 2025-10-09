@@ -11,7 +11,7 @@
     const { form: formData, enhance, delayed, message } = form;
 </script>
 
-<form class="mx-auto max-w-xl" action="/orders" use:enhance>
+<form method="POST" class="mx-auto max-w-xl" action="/orders" use:enhance>
     <Card.Root>
         <Card.Header>
             <Card.Title>My Order</Card.Title>
@@ -32,19 +32,20 @@
             </Form.Field>
         </Card.Content>
         <Card.Footer>
-            {#if $message}
-                <div>
-                    {$message}
-                </div>
-            {:else}
-                <Button type="submit" class="w-full">
+            <div class="flex flex-col justify-center items-center w-full">
+                <Button type="submit" class="w-full cursor-pointer mb-3">
                     {#if $delayed}
                         <Loader class="size-4 animate-spin" />
                     {:else}
                         send
                     {/if}
                 </Button>
-            {/if}
+                {#if $message}
+                    <div class="text-red-500">
+                        {$message}
+                    </div>
+                {/if}
+            </div>
         </Card.Footer>
     </Card.Root>
 </form>

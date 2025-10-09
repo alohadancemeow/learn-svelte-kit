@@ -49,6 +49,7 @@
 
         isLoading = true;
 
+        // check if this order exist
         const orderExists = (
             await fetch("/api/order/exist", {
                 method: "POST",
@@ -156,7 +157,7 @@
                 <Card.Footer>
                     <Button
                         type="submit"
-                        class="w-full"
+                        class="w-full cursor-pointer"
                         size="lg"
                         disabled={stripe === null || elements === undefined}
                     >
