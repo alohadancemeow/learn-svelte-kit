@@ -36,6 +36,7 @@
     "@eslint/js": "^9.22.0",
     "@internationalized/date": "^3.10.0",
     "@lucide/svelte": "^0.544.0",
+    "@stripe/stripe-js": "^8.0.0",
     "@sveltejs/adapter-auto": "^6.0.0",
     "@sveltejs/kit": "^2.22.0",
     "@sveltejs/package": "^2.0.0",
@@ -51,8 +52,10 @@
     "globals": "^16.0.0",
     "prisma": "^6.17.0",
     "publint": "^0.3.2",
+    "stripe": "^19.1.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
+    "svelte-stripe": "^1.4.0",
     "sveltekit-superforms": "^2.27.2",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^3.1.1",
@@ -71,7 +74,8 @@
     "@prisma/client": "6.17.0",
     "better-sqlite3": "^11.8.0",
     "lucia": "^3.2.2",
-    "oslo": "^1.2.1"
+    "oslo": "^1.2.1",
+    "resend": "^6.1.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

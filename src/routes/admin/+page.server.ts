@@ -50,6 +50,7 @@ export const load = async () => {
 	};
 };
 
+// Sign out action
 export const actions = {
 	default: async (event) => {
 		if (!event.locals.session) {

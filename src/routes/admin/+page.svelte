@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { formatCurrency, formatNumber } from '$lib/utils.js';
-	import * as Card from '$lib/components/ui/card/index.js';
+	import { formatCurrency, formatNumber } from "$lib/utils.js";
+	import * as Card from "$lib/components/ui/card/index.js";
 
 	type DashboardCardProps = {
 		title: string;
@@ -12,26 +12,27 @@
 	let { salesData, userData, productData } = $derived(data);
 </script>
 
-
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+<div
+	class="p-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-7xl sm:px-6 lg:px-8"
+>
 	{@render dashboardCard({
-		title: 'sales',
+		title: "sales",
 		subtitle: `${formatNumber(salesData.numberOfSales)} orders`,
-		body: formatCurrency(salesData.amount)
+		body: formatCurrency(salesData.amount),
 	})}
 	{@render dashboardCard({
-		title: 'Customers',
+		title: "Customers",
 		subtitle: `${formatCurrency(userData.averageValuePerUser)} Average Value`,
-		body: formatNumber(userData.userCount)
+		body: formatNumber(userData.userCount),
 	})}
 	{@render dashboardCard({
-		title: 'Active products',
+		title: "Active products",
 		subtitle: `${formatNumber(productData.inactiveCount)} Inactive`,
-		body: formatNumber(productData.activeCount)
+		body: formatNumber(productData.activeCount),
 	})}
 </div>
 
-{#snippet dashboardCard({title,subtitle,body}:DashboardCardProps)}
+{#snippet dashboardCard({ title, subtitle, body }: DashboardCardProps)}
 	<Card.Root>
 		<Card.Header>
 			<Card.Title>{title}</Card.Title>
